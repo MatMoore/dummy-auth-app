@@ -9,13 +9,18 @@
     <p>Welcome to <%= title %></p>
     <% if (loggedIn) { %>
     <p>You are logged in</p>
+    <img style="width:80%" src="logged_in.jpg" alt="Puppy behind gate"><br>
     <ul>
       <li><a href="/profile">Profile</a></li>
       <li><a href="/logout">Logout</a></li>
     </ul>
     <% } else { %>
     <p>You are logged out</p>
-    <a href="/login">Login</a>
+    <ul>
+      <li><a href="/login">Login</a></li>
+    </ul>
+    <img style="width:80%" src="logged_out.jpg" alt="Puppy playing outside">
+
     <% } %>
   </body>
 </html>
