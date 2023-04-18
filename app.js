@@ -15,7 +15,7 @@ const config = {
   baseURL: "https://dummy-auth-app.fly.dev",
   clientID: "dummy",
   issuerBaseURL: "https://zensso.sevos.io/realms/master",
-  secret: process.env.CLIENT_SECRET,
+  secret: process.env.CLIENT_SECRET || "YOUR_CLIENT_ID",
 };
 
 // The `auth` router attaches /login, /logout
@@ -34,7 +34,10 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // req.oidc.isAuthenticated is provided from the auth router
 app.get("/", (req, res) => {
-  res.send(req.oidc.isAuthenticated() ? "Logged in" : "Logged out");
+  res.render("index", {
+    title: "Zenbarko",
+    loggedIn: req.oidc.isAuthenticated(),
+  });
 });
 
 // The /profile route will show the user profile as JSON
