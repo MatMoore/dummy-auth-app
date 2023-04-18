@@ -1,11 +1,18 @@
-# hello-fly
+# Dummy auth app
 
-This is our Hello World Fly.io application. Try it out now:
+This app demonstrates integrating an app with Keycloak using OpenID Connect.
 
-```sh
-git clone https://github.com/fly-apps/hello-fly.git
+## Deploying
+### In fly.io
+Set `CLIENT_SECRET` environment variable:
 
-cd hello-fly
-
-fly launch --now
 ```
+flyctl secrets set CLIENT_SECRET=***
+```
+
+### In keycloak
+Create a new client. Most settings can be left as defaults.
+
+- Set redirect URL to `/callback`
+- Set root URL to whatever the deployment URL is, e.g. `https://***.fly.dev`
+- Enable implicit flow only if you want to be able to test on localhost
