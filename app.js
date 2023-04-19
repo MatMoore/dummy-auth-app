@@ -17,6 +17,9 @@ const config = {
   issuerBaseURL: "https://zensso.sevos.io/realms/zenbarko",
   secret: process.env.CLIENT_SECRET || "YOUR_CLIENT_ID",
   idpLogout: true,
+  routes: {
+    postLogoutRedirect: "/",
+  },
 };
 
 // The `auth` router attaches /login, /logout
