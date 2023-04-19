@@ -16,6 +16,7 @@ const config = {
   clientID: "dummy-app",
   issuerBaseURL: "https://zensso.sevos.io/realms/zenbarko",
   secret: process.env.CLIENT_SECRET || "YOUR_CLIENT_ID",
+  idpLogout: true,
 };
 
 // The `auth` router attaches /login, /logout
