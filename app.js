@@ -13,8 +13,8 @@ var app = express();
 const config = {
   authRequired: false,
   baseURL: "https://dummy-auth-app.fly.dev",
-  clientID: "dummy",
-  issuerBaseURL: "https://zensso.sevos.io/realms/master",
+  clientID: "dummy-app",
+  issuerBaseURL: "https://zensso.sevos.io/realms/zenbarko",
   secret: process.env.CLIENT_SECRET || "YOUR_CLIENT_ID",
 };
 
